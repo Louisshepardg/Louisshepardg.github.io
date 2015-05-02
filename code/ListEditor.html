@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>List Editor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+        <div id="header">
+
+
+
+        <div id="Icon">
+
+            <p id="Namen"> MOBILBLIO</p>
+
+            <img src="../Pictures/MobilblioIcon.png" alt="Mobilblio Icon" id="Plane">
+
+        </div>
+
+        <p id="Tag"> Our Goal Is To Improve Your Travel</p>
+
+        <button id="opener_zero">Log In</button>
+        <div id="dialog_zero" title="Dialog Title One">I'm a dialog</div>
+
+        <script>
+            $( "#dialog_zero" ).dialog({ autoOpen: false });
+            $( "#opener_zero" ).click(function() {
+                $( "#dialog_zero" ).dialog( "open" );
+            });
+        </script>
+
+        <button id="Sign"> <a href="QuestionOverview.html"> Sign Up </a> </button>
+
+        <script>
+            $( "button" ).button();
+        </script>
+
+        <div id="Subtitle">
+
+            <p>Question Editor</p>
+
+        </div>
+
+
+
+    </div><!-- #header -->
+
+<div id="content">
+
+<div id="tabs">
+    <ul>
+        <li><a href="#fragment-1"><span>One</span></a></li>
+        <li><a href="#fragment-2"><span>Two</span></a></li>
+
+    </ul>
+    <div id="fragment-1">
+        <!--<p>First tab is active by default:</p>-->
+        <!--<pre><code>$( "#tabs" ).tabs(); </code></pre>-->
+
+
+        <script type="javascript">
+
+            // Access some stored data
+            document.write( "field = " + sessionStorage.getItem("field"));
+
+        </script>
+
+    </div>
+    <div id="fragment-2">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </div>
+
+</div>
+
+<script>
+    $( "#tabs" ).tabs();
+</script>
+
+</div><!--content-->
+
+    <div id="footer">
+
+</div><!-- end footer-->
+
+</div><!--end#wrapper-->
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <!--<link href="AccordionStyle.css" rel="stylesheet" type="text/css"/>-->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Check Out</title>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.hidable').hide();
+
+            $('.imgbtn').click(function(){
+                target = $(this).attr('data-target');
+                $(".link:nth-child(" + target + ")").click();
+            });
+
+            $('.link').each(function(){
+
+                $(this).toggleClass("active").next();
+                $(this).click(function(){
+                    var show=$(this).attr('rel');
+                    $('.hidable').slideUp('slow');
+                    $(show).slideDown('fast');
+                });
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Start header template-->
+
+    <div id="header">
+
+
+        <div id="Icon">
+
+            <p id="Namen"> MOBILBLIO</p>
+
+            <img src="../Pictures/MobilblioIcon.png" alt="Mobilblio Icon" id="Plane">
+
+        </div>
+
+        <p id="Tag"> Our Goal Is To Improve Your Travel</p>
+
+        <button id="opener_zero">Log In</button>
+        <div id="dialog_zero" title="Dialog Title One">I'm a dialog</div>
+
+        <script>
+            $( "#dialog_zero" ).dialog({ autoOpen: false });
+            $( "#opener_zero" ).click(function() {
+                $( "#dialog_zero" ).dialog( "open" );
+            });
+        </script>
+
+        <button id="Sign"> <a href="QuestionOverview.html"> Sign Up </a> </button>
+
+        <script>
+            $( "button" ).button();
+        </script>
+
+        <div id="Subtitle">
+
+            <p>List Organizer</p>
+
+        </div>
+
+
+    </div>
+    <!-- End header template-->
+
+    <div id="content">
+
+        <!-- top nav -->
+        <div id="TopNav">
+
+            <button> <a href="QuestionOverview.html"> Question Overview </a> </button>
+
+            <script>
+                $( "button" ).button();
+            </script>
+
+            <button> <a href="QuestionEditor.html"> Question Editor </a></button>
+
+            <script>
+                $( "button" ).button();
+            </script>
+
+            <button> <a href="ListEditor.html"> List Editor </a> </button>
+
+            <script>
+                $( "button" ).button();
+            </script>
+
+            <button> <a href="CheckOut.html"> <img id="Cart" src="../Pictures/ShoppingCart.png"> </a></button>
+
+            <script>
+                $( "button" ).button();
+            </script>
+
+        </div>
+        <!-- end top nav -->
+        <div id="Accordside" class="inline">
+
+
+
+            <!--<div id="Newlist">-->
+
+            <!--<button> <a href="QuestionOverview.html"> Make A New List! </a></button>-->
+
+            <!--<script>-->
+            <!--$( "button" ).button();-->
+            <!--</script>-->
+
+
+            <!--</div>-->
+
+            <!--<p id="Hist"> History </p>-->
+
+
+            <div id="accordion">
+                <h3>Section 1</h3>
+                <div>
+                    <p>
+
+                    <ul id="sortable">
+                        <li id="Count">Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                        <li>Item 5</li>
+                    </ul>
+
+                    <script>$("#sortable").sortable();</script>
+
+                    </p>
+                </div>
+                <h3>Section 2</h3>
+                <div>
+                    <p>
+                    <ul id="sortable_two">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                        <li>Item 5</li>
+                    </ul>
+
+                    <script>$("#sortable_two").sortable();</script>
+                    </p>
+                </div>
+                <h3>5/1/15</h3>
+                <div>
+                    <p>
+
+                        <!-- these list items link to a div outside of the accordion, that's where the pics will go-->
+
+                    <ul id="sortable_three">
+                        <li class='link' rel='#div1'><a href="#">The Count of Monte Christo</a></li>
+                        <li class='link' rel='#div2'><a href="#">A History of Modern Germany</a></li>
+                        <li class='link' rel='#div3'><a href="#">Bicycling In Africa</a></li>
+                        <li class='link' rel='#div4'><a href="#">History Of The French In India</a></li>
+                        <li class='link' rel='#div5'><a href="#">Illustrations Of China And Its People</a></li>
+                        <li class='link' rel='#div6'><a href="#">In Palestine And Other Poems</a></li>
+                        <li class='link' rel='#div7'><a href="#">Ireland Your Only Place</a></li>
+                        <li class='link' rel='#div8'><a href="#">Mexico Places And Pleasures</a></li>
+                    </ul>
+
+                    <script>$("#sortable_three").sortable();</script>
+                    </p>
+
+
+                </div>
+            </div>
+
+            <script>
+                $( "#accordion" ).accordion();
+            </script>
+
+            <!--div end accordside-->
+        </div>
+
+        <!-- this div is where the different pictures will go-->
+
+        <!-- i havn't figured out how to link it to my photos or adjust the style-->
+
+        <div id="boxes">
+            <div class='hidable' id='div1'><table><tr><td><a href="#div2" data-target="2" class="imgbtn"><img id="imgbtn" src="../Pictures/count_of_monte_cristo.JPG"></a></td></tr></table></div>
+            <div class='hidable' id='div2'><table><tr><td><a href="#div2" data-target="2" class="imgbtn"><img id="imgbtn2" src="../Pictures/AHistoryOfModernGermany.JPG"></a></td></tr></table></div>2</div>
+        <div class='hidable' id='div3'>div 3</div>
+        <div class='hidable' id='div4'>div 4</div>
+        <div class='hidable' id='div5'>div 5</div>
+        <div class='hidable' id='div6'>div 6</div>
+        <div class='hidable' id='div7'>div 7</div>
+        <div class='hidable' id='div8'>div 8</div>
+
+        <!--Add photo of book here to the right of the accordion-->
+        <div id="Viewer"class="inline">
+
+            <img id="Countpic" src="../Pictures/count_of_monte_cristo.JPG">
+
+        </div>
+
+        <br class="clearboth">
+
+
+
+
+    </div>
+
+
+
+
+
+<!-- Start footer template -->
+<div id="footer">
+
+</div>
+<!-- End footer template -->
+
+</div><!-- #wrapper-->
+
+</body>
+</html>
